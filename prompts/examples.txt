@@ -1,0 +1,118 @@
+Query Examples for Production Analytics Chatbot
+
+Production Queries
+
+Daily Production
+User: "Show me daily production for all machines in May 2025"
+Expected SQL Pattern: Daily aggregation with argMax/argMin for production counters
+Response Focus: Total production, machine comparisons, daily trends
+
+User: "What was the production output of stenter 4 yesterday?"
+Expected SQL Pattern: Single machine, single day production query
+Response Focus: Specific numbers, comparison to typical output
+
+Hourly Production
+User: "Show hourly production for stenter 1 and 2 on May 3rd"
+Expected SQL Pattern: Hourly time buckets (07:30-08:30 format)
+Response Focus: Hourly patterns, peak production times, machine comparison
+
+User: "Which hour had the highest production across all machines last week?"
+Expected SQL Pattern: Hourly aggregation with ranking/max functions
+Response Focus: Peak hour identification, contributing machines
+
+Energy Queries
+
+Energy Consumption
+User: "Show me energy consumption for all stenters in April 2025"
+Expected SQL Pattern: TotalEnergy parameter with device mapping
+Response Focus: Energy totals, efficiency ratios, high consumers
+
+User: "Compare energy usage between stenter 1 and stenter 5 this month"
+Expected SQL Pattern: Multi-machine energy comparison
+Response Focus: Consumption differences, efficiency implications
+
+Utilization Queries
+
+Machine Utilization
+User: "What's the utilization rate for all machines this week?"
+Expected SQL Pattern: Status parameter with lead() function for time intervals
+Response Focus: Utilization percentages, downtime analysis, efficiency insights
+
+User: "Which days had less than 50% utilization in March?"
+Expected SQL Pattern: Conditional filtering with utilization calculation
+Response Focus: Low utilization days, potential causes, impact on production
+
+Multi-Metric Queries
+
+Combined Analysis
+User: "Show production, energy consumption, and utilization for stenter 3 on May 5th"
+Expected SQL Pattern: Multiple CTEs joined by machine and date
+Response Focus: Comprehensive machine performance, efficiency relationships
+
+User: "Which machines had high energy consumption but low production last month?"
+Expected SQL Pattern: Multi-metric filtering with efficiency ratios
+Response Focus: Efficiency problems, specific machines needing attention
+
+Visualization Requests
+Chart Specifications
+User: "Create a bar chart showing daily production for all machines in April"
+Expected Response: Bar chart with grouped machines, daily comparison
+Chart Type: Grouped bar chart
+
+User: "Show me a line chart of hourly energy consumption for stenter 1 yesterday"
+Expected Response: Time series line chart showing hourly trends
+Chart Type: Line chart with time axis
+
+User: "Make a pie chart of production distribution across all machines this week"
+Expected Response: Pie chart showing each machine's contribution percentage
+Chart Type: Pie chart with machine segments
+
+Complex Analytical Queries
+
+Trend Analysis
+User: "What are the production trends for the last 30 days?"
+Expected SQL Pattern: Daily production with date range, trend calculation
+Response Focus: Increasing/decreasing trends, seasonal patterns, anomalies
+
+Performance Comparison
+User: "Compare the performance of all machines for the best production day vs worst production day"
+Expected SQL Pattern: Conditional analysis with max/min day identification
+Response Focus: Performance extremes, machine-specific variations, insights
+
+Efficiency Analysis
+User: "Which machine has the best production per unit of energy consumed?"
+Expected SQL Pattern: Ratio calculation between production and energy metrics
+Response Focus: Efficiency rankings, cost-effectiveness, optimization opportunities
+
+Time-Based Queries
+Specific Date Ranges
+User: "Show me all metrics for the first week of May 2025"
+Expected SQL Pattern: Multi-metric query with date range filtering
+Response Focus: Weekly summary, daily variations, overall performance
+
+Shift Analysis
+User: "Compare morning vs afternoon production rates"
+Expected SQL Pattern: Time-based segmentation within working hours
+Response Focus: Shift performance differences, optimal production times
+
+Filtering and Conditional Queries
+
+Threshold-Based Analysis
+User: "Show days where any machine produced more than 5000 units"
+Expected SQL Pattern: Conditional filtering with production thresholds
+Response Focus: High-performance days, contributing machines, success factors
+
+User: "Find machines with utilization below 60% and their production impact"
+Expected SQL Pattern: Multi-step filtering with utilization threshold
+Response Focus: Underperforming machines, production losses, improvement opportunities
+
+Data Quality and Debugging Queries
+Data Validation
+User: "Show me data availability for all machines last week"
+Expected SQL Pattern: Record counting and data completeness analysis
+Response Focus: Data gaps, missing periods, data quality issues
+
+Parameter Exploration
+User: "What parameters are available for stenter 7?"
+Expected SQL Pattern: Parameter discovery query for specific device
+Response Focus: Available metrics, data types, measurement units
